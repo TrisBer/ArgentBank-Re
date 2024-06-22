@@ -1,5 +1,4 @@
 import Button from "../Button/Button";
-
 const EditName = () => {
   return (
     <section className="sign-in-content">
@@ -10,14 +9,17 @@ const EditName = () => {
           <label htmlFor="username">Username</label>
           <input type="text" id="username" />
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="firstname">First Name</label>
-          <input type="text" id="firstname" />
+          <input type="text" id="firstname" disabled/>
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="lastname">Last Name</label>
-          <input type="text" id="lastname" />
+          <input type="text" id="lastname" disabled/>
         </div>
+        
         <Button btnText={"Save"}/>
         <Button btnText={"Cancel"}/>
       </form>

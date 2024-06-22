@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-// importation du reducer loginReducer depuis le fichier "loginSlice.js"
-import loginReducer from "./slices/loginSlice";
-// configuration du store Redux en utilisant configureStore
-const store = configureStore({
+import loginSlice from "../redux/loginSlice";
+
+export const mainStore = configureStore({
   reducer: {
-    login: loginReducer, // ajout du reducer "loginReducer" sous le nom de "login" dans le store
+    Login: loginSlice.reducer
   },
 });
-export default store;
+
+export default mainStore;
