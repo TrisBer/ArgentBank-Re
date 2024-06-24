@@ -5,20 +5,35 @@ import { createSlice } from "@reduxjs/toolkit";
 export const loginSlice = createSlice({
   name: "login",
   initialState: {
-    user: null,
+    userToken: null,
+    userProfil: null,
   },
   reducers: {
     //Action pour connecter l'utilisateur
-    loginUser:(state, action) =>{
-      state.user = action.payload; // Stokera les informations avec dispatch
+    loginUser: (state, action) => {
+      state.userToken = action.payload; // Stokera les informations avec dispatch
     },
     // Action pour deconecter l'utilisateur
-    logoutUser:(state) =>{
-      state.user = null; // Remet a zéro les information user
+    logoutUser: (state) => {
+      state.userToken = null; // Remet a zéro les information user
+    },
+    //Action pour stoker les données utilisateur
+    infoUser: (state, action) => {
+      state.userProfil = action.payload; // Stokera les informations avec dispatch
+    },
+    // Action pour deconecter l'utilisateur
+    logoutInfoUser: (state) => {
+      state.userProfil = null; // Remet a zéro les information user
+    },
+    //Action pour stoker les données utilisateur
+    infoUserName: (state, action) => {
+      console.log("voici le payload info user Name :", action.payload);
+      state.userProfil.userName = action.payload; // Stokera les informations avec dispatch
     },
   },
 });
 
-export const { loginUser, logoutUser } = loginSlice.actions;
+export const { loginUser, logoutUser, infoUser, infoUserName } =
+  loginSlice.actions;
 
 export default loginSlice;
